@@ -9,9 +9,9 @@
     "generate": "all-contributors generate",
     "commit": "git-cz",
     "lint": "eslint .",
-    "test": "concurrently \"yarn run lint\" \"yarn run find-new-rules\"",
+    "test": "concurrently 'yarn run lint' 'yarn run find-new-rules'",
     "find-new-rules":
-      "concurrently \"yarn run find-new-rules:babel-module\" \"yarn run find-new-rules:jsx-a11y\" \"yarn run find-new-rules:jest\" \"yarn run find-new-rules:main\" \"yarn run find-new-rules:react\" \"yarn run find-new-rules:webpack\"",
+      "concurrently 'yarn run find-new-rules:babel-module' 'yarn run find-new-rules:jsx-a11y' 'yarn run find-new-rules:jest' 'yarn run find-new-rules:main' 'yarn run find-new-rules:react' 'yarn run find-new-rules:webpack'",
     "find-new-rules:babel-module":
       "eslint-find-rules --unused ./other/test/babel-module.js",
     "find-new-rules:jsx-a11y":
