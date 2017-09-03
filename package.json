@@ -8,8 +8,9 @@
     "generate": "all-contributors generate",
     "commit": "git-cz",
     "lint": "eslint .",
-    "test": "npm-run-all --parallel lint find-new-rules",
-    "find-new-rules": "npm-run-all --parallel find-new-rules:*",
+    "test": "concurrently \"npm run lint\" \"npm run find-new-rules\"",
+    "find-new-rules":
+      "concurrently \"npm run find-new-rules:babel-module\" \"npm run find-new-rules:jsx-a11y\" \"npm run find-new-rules:jest\" \"npm run find-new-rules:main\" \"npm run find-new-rules:react\" \"npm run find-new-rules:webpack\"",
     "find-new-rules:babel-module":
       "eslint-find-rules --unused ./other/test/babel-module.js",
     "find-new-rules:jsx-a11y":
@@ -63,12 +64,12 @@
   "devDependencies": {
     "babel-core": "6.26.0",
     "commitizen": "2.9.6",
+    "concurrently": "3.5.0",
     "cz-conventional-changelog": "2.0.0",
     "eslint": "4.6.0",
     "eslint-find-rules": "3.1.1",
     "husky": "0.14.3",
     "lint-staged": "4.0.4",
-    "npm-run-all": "4.1.1",
     "semantic-release": "7.0.2",
     "validate-commit-msg": "2.14.0"
   },
