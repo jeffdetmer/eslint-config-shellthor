@@ -1,7 +1,8 @@
 {
   "name": "eslint-config-shellthor",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "ESLint configuration for my personal projects",
+  "private": false,
   "main": "index.js",
   "scripts": {
     "add": "all-contributors add",
@@ -23,7 +24,7 @@
     "commitmsg": "validate-commit-msg",
     "precommit": "yarn run test",
     "semantic-release":
-      "semantic-release pre && yarn publish && semantic-release post"
+      "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,9 @@
     "url": "https://github.com/shellthor/eslint-config-shellthor/issues"
   },
   "homepage": "https://github.com/shellthor/eslint-config-shellthor#readme",
+  "release": {
+    "branch": "master"
+  },
   "dependencies": {
     "babel-eslint": "7.2.3",
     "babel-plugin-module-resolver": "2.7.1",
@@ -70,7 +74,7 @@
     "eslint-find-rules": "3.1.1",
     "husky": "0.14.3",
     "lint-staged": "4.0.4",
-    "semantic-release": "7.0.2",
+    "semantic-release": "^7.0.2",
     "validate-commit-msg": "2.14.0"
   },
   "config": {
