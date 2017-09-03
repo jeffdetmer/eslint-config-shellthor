@@ -7,7 +7,6 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: ['airbnb/rules/react-a11y'],
   plugins: ['jsx-a11y'],
   rules: {
     'jsx-a11y/accessible-emoji': 2,

@@ -7,7 +7,7 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: ['airbnb/rules/react'],
+  extends: ['airbnb', './jsx-a11y.js'],
   plugins: ['react'],
   rules: {
     'jsx-quotes': [2, 'prefer-double'],

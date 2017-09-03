@@ -10,9 +10,6 @@ module.exports = {
     './possible-errors.js',
     './import/index.js',
     './es6/index.js',
-    './jest.js',
-    './react.js',
-    './jsx-a11y.js',
   ],
   rules: {},
 };

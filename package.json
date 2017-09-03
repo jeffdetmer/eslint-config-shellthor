@@ -11,11 +11,9 @@
     "lint": "eslint .",
     "test": "concurrently 'yarn run lint' 'yarn run find-new-rules'",
     "find-new-rules":
-      "concurrently 'yarn run find-new-rules:babel-module' 'yarn run find-new-rules:jsx-a11y' 'yarn run find-new-rules:jest' 'yarn run find-new-rules:main' 'yarn run find-new-rules:react' 'yarn run find-new-rules:webpack'",
+      "concurrently 'yarn run find-new-rules:babel-module' 'yarn run find-new-rules:jest' 'yarn run find-new-rules:main' 'yarn run find-new-rules:react' 'yarn run find-new-rules:webpack'",
     "find-new-rules:babel-module":
       "eslint-find-rules --unused ./other/test/babel-module.js",
-    "find-new-rules:jsx-a11y":
-      "eslint-find-rules --unused ./other/test/jsx-a11y.js",
     "find-new-rules:jest": "eslint-find-rules --unused ./other/test/jest.js",
     "find-new-rules:main": "eslint-find-rules --unused ./index.js",
     "find-new-rules:react": "eslint-find-rules --unused ./other/test/react.js",
