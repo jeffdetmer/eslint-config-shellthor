@@ -19,7 +19,6 @@ module.exports = {
     'consistent-this': 0, // Too many use-cases for reassigning "this" to different values
     'func-names': 2,
     'func-name-matching': 2,
-    'func-style': [2, 'declaration'],
     'id-blacklist': 2,
     'init-declarations': 0,
     'id-length': 0, // when using short composable functions, using single-letter variables is fine
