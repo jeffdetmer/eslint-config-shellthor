@@ -8,9 +8,9 @@
     "generate": "all-contributors generate",
     "commit": "git-cz",
     "lint": "eslint .",
-    "test": "concurrently \"npm run lint\" \"npm run find-new-rules\"",
+    "test": "concurrently \"yarn run lint\" \"yarn run find-new-rules\"",
     "find-new-rules":
-      "concurrently \"npm run find-new-rules:babel-module\" \"npm run find-new-rules:jsx-a11y\" \"npm run find-new-rules:jest\" \"npm run find-new-rules:main\" \"npm run find-new-rules:react\" \"npm run find-new-rules:webpack\"",
+      "concurrently \"yarn run find-new-rules:babel-module\" \"yarn run find-new-rules:jsx-a11y\" \"yarn run find-new-rules:jest\" \"yarn run find-new-rules:main\" \"yarn run find-new-rules:react\" \"yarn run find-new-rules:webpack\"",
     "find-new-rules:babel-module":
       "eslint-find-rules --unused ./other/test/babel-module.js",
     "find-new-rules:jsx-a11y":
@@ -21,9 +21,9 @@
     "find-new-rules:webpack":
       "eslint-find-rules --unused ./other/test/webpack.js",
     "commitmsg": "validate-commit-msg",
-    "precommit": "npm t",
+    "precommit": "yarn run test",
     "semantic-release":
-      "semantic-release pre && npm publish && semantic-release post"
+      "semantic-release pre && yarn publish && semantic-release post"
   },
   "repository": {
     "type": "git",
