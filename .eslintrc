@@ -1,0 +1,6 @@
+{
+  "extends": ["./index.js"], // because this extends the base and has most of the rules I care about
+  "rules": {
+    "no-magic-numbers": 0 // because rules are 0, 1, 2
+  }
+}

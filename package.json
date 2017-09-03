@@ -1,0 +1,93 @@
+{
+  "name": "eslint-config-shellthor",
+  "version": "0.0.0",
+  "description": "ESLint configuration for my personal projects",
+  "main": "index.js",
+  "scripts": {
+    "add": "all-contributors add",
+    "generate": "all-contributors generate",
+    "commit": "git-cz",
+    "lint": "eslint .",
+    "test": "npm-run-all --parallel lint find-new-rules",
+    "find-new-rules": "npm-run-all --parallel find-new-rules:*",
+    "find-new-rules:babel-module":
+      "eslint-find-rules --unused ./other/test/babel-module.js",
+    "find-new-rules:jsx-a11y":
+      "eslint-find-rules --unused ./other/test/jsx-a11y.js",
+    "find-new-rules:jest": "eslint-find-rules --unused ./other/test/jest.js",
+    "find-new-rules:main": "eslint-find-rules --unused ./index.js",
+    "find-new-rules:react": "eslint-find-rules --unused ./other/test/react.js",
+    "find-new-rules:webpack":
+      "eslint-find-rules --unused ./other/test/webpack.js",
+    "commitmsg": "validate-commit-msg",
+    "precommit": "npm t",
+    "semantic-release":
+      "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shellthor/eslint-config-shellthor.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "shellthor",
+    "javascript",
+    "styleguide"
+  ],
+  "author": "Jeff Detmer <jeff.detmer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shellthor/eslint-config-shellthor/issues"
+  },
+  "homepage": "https://github.com/shellthor/eslint-config-shellthor#readme",
+  "dependencies": {
+    "babel-eslint": "7.2.3",
+    "babel-plugin-module-resolver": "2.7.1",
+    "eslint-config-airbnb": "15.1.0",
+    "eslint-config-airbnb-base": "12.0.0",
+    "eslint-import-resolver-babel-module": "3.0.0",
+    "eslint-import-resolver-webpack": "0.8.3",
+    "eslint-plugin-babel": "4.1.2",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jest": "20.0.3",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.3.0",
+    "prettier": "1.6.1",
+    "webpack": "3.5.5"
+  },
+  "peerDependencies": {
+    "eslint": "4.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "eslint": "4.6.0",
+    "eslint-find-rules": "3.1.1",
+    "husky": "0.14.3",
+    "lint-staged": "4.0.4",
+    "npm-run-all": "4.1.1",
+    "semantic-release": "7.0.2",
+    "validate-commit-msg": "2.14.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|json)": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBraketSameLine": false
+  }
+}
