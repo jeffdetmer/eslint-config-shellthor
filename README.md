@@ -1,4 +1,6 @@
 # eslint-config-shellthor
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/shellthor/eslint-config-shellthor.svg)](https://greenkeeper.io/)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![travis build](https://img.shields.io/travis/shellthor/eslint-config-shellthor.svg?style=flat-square)](https://travis-ci.org/shellthor/eslint-config-shellthor)
