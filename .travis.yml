@@ -8,5 +8,5 @@ node_js:
 after_success:
   - yarn run semantic-release
 branches:
-  only:
-    - master
+  except:
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
