@@ -10,18 +10,14 @@
     "commit": "git-cz",
     "lint": "eslint .",
     "test": "concurrently 'yarn run lint' 'yarn run find-new-rules'",
-    "find-new-rules":
-      "concurrently 'yarn run find-new-rules:babel-module' 'yarn run find-new-rules:jest' 'yarn run find-new-rules:main' 'yarn run find-new-rules:react' 'yarn run find-new-rules:webpack'",
-    "find-new-rules:babel-module":
-      "eslint-find-rules --unused ./other/test/babel-module.js",
+    "find-new-rules": "concurrently 'yarn run find-new-rules:babel-module' 'yarn run find-new-rules:jest' 'yarn run find-new-rules:main' 'yarn run find-new-rules:react' 'yarn run find-new-rules:webpack'",
+    "find-new-rules:babel-module": "eslint-find-rules --unused ./other/test/babel-module.js",
     "find-new-rules:jest": "eslint-find-rules --unused ./other/test/jest.js",
     "find-new-rules:main": "eslint-find-rules --unused ./index.js",
     "find-new-rules:react": "eslint-find-rules --unused ./other/test/react.js",
-    "find-new-rules:webpack":
-      "eslint-find-rules --unused ./other/test/webpack.js",
+    "find-new-rules:webpack": "eslint-find-rules --unused ./other/test/webpack.js",
     "precommit": "yarn run test",
-    "semantic-release":
-      "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -53,24 +49,24 @@
     "eslint-import-resolver-webpack": "0.8.3",
     "eslint-plugin-babel": "4.1.2",
     "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jest": "20.0.3",
+    "eslint-plugin-jest": "21.0.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.3.0",
     "prettier": "1.6.1",
     "webpack": "3.5.5"
   },
   "peerDependencies": {
-    "eslint": "4.6.0"
+    "eslint": "4.6.1"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
     "commitizen": "2.9.6",
     "concurrently": "3.5.0",
     "cz-conventional-changelog": "2.0.0",
-    "eslint": "4.6.0",
+    "eslint": "4.6.1",
     "eslint-find-rules": "3.1.1",
     "husky": "0.14.3",
-    "lint-staged": "4.0.4",
+    "lint-staged": "4.1.0",
     "semantic-release": "^7.0.2"
   },
   "config": {
@@ -79,7 +75,10 @@
     }
   },
   "lint-staged": {
-    "*.+(js|json)": ["prettier --write", "git add"]
+    "*.+(js|json)": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "prettier": {
     "printWidth": 80,
