@@ -6,8 +6,8 @@ notifications:
 node_js:
   - 8
 after_success:
-  - yarn run semantic-release
+  - npx codecov
+  - npx -p semantic-release@8 -c "semantic-release-pre && npm publish && semantic-release-post"
 branches:
   except:
     - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
-    
