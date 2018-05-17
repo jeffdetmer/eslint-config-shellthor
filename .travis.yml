@@ -5,6 +5,7 @@ notifications:
   email: false
 node_js:
   - 8
+  - 10
 after_success:
   - npx codecov
   - npx -p semantic-release@8 -c "semantic-release-pre && npm publish && semantic-release-post"
