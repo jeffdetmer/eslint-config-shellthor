@@ -10,16 +10,15 @@
     "commit": "git-cz",
     "lint": "eslint .",
     "test": "concurrently 'npm run lint' 'npm run find-new-rules'",
-    "find-new-rules":
-      "concurrently 'npm run find-new-rules:babel-module' 'npm run find-new-rules:jest' 'npm run find-new-rules:main' 'npm run find-new-rules:react' 'npm run find-new-rules:webpack'",
-    "find-new-rules:babel-module":
-      "eslint-find-rules --unused ./other/test/babel-module.js",
+    "find-new-rules": "concurrently 'npm run find-new-rules:babel-module' 'npm run find-new-rules:jest' 'npm run find-new-rules:main' 'npm run find-new-rules:react' 'npm run find-new-rules:webpack'",
+    "find-new-rules:babel-module": "eslint-find-rules --unused ./other/test/babel-module.js",
     "find-new-rules:jest": "eslint-find-rules --unused ./other/test/jest.js",
     "find-new-rules:main": "eslint-find-rules --unused ./index.js",
     "find-new-rules:react": "eslint-find-rules --unused ./other/test/react.js",
-    "find-new-rules:webpack":
-      "eslint-find-rules --unused ./other/test/webpack.js",
-    "precommit": "npm run test"
+    "find-new-rules:webpack": "eslint-find-rules --unused ./other/test/webpack.js",
+    "precommit": "npm run test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -55,7 +54,8 @@
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.3.0",
     "prettier": "1.7.4",
-    "webpack": "3.7.1"
+    "webpack": "3.7.1",
+    "snyk": "^1.316.1"
   },
   "peerDependencies": {
     "eslint": "4.6.1"
@@ -76,7 +76,10 @@
     }
   },
   "lint-staged": {
-    "*.+(js|json)": ["prettier --write", "git add"]
+    "*.+(js|json)": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "prettier": {
     "printWidth": 80,
@@ -87,5 +90,6 @@
     "trailingComma": "es5",
     "bracketSpacing": true,
     "jsxBraketSameLine": false
-  }
+  },
+  "snyk": true
 }
